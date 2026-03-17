@@ -1,0 +1,333 @@
+:root {
+  --primary: #333333;
+  --background: #eeeeee;
+  --text: #333333;
+  --border-color: #333333;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+[data-theme='dark'] {
+  --primary: #eeeeee;
+  --background: #333333;
+  --text: #eeeeee;
+  --border-color: #eeeeee;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.app-container {
+  max-width: 800px; 
+  margin: 0 auto;  
+  padding: 16px;
+  min-height: 100vh; 
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 48px; 
+}
+
+header h1 a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+.navigation a, .navigation button {
+  text-decoration: none;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-page, .register-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-top: 64px;
+}
+
+.login-page h2, .register-page h2 {
+  font-size: 24px;
+  margin-bottom: 32px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.input-login, .input-register {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+  width: 100%;
+  max-width: 400px; 
+}
+
+.input-login label, .input-register label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: -8px; 
+}
+
+.input-login input, .input-register input {
+  padding: 12px 16px;
+  background-color: var(--background);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--text);
+  width: 100%;
+}
+
+.input-login input:focus, .input-register input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.input-login button, .input-register button {
+  padding: 12px;
+  margin-top: 16px;
+  background-color: var(--text); 
+  color: var(--background);      
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%; 
+  transition: opacity 0.2s;
+}
+
+.input-login button:hover, .input-register button:hover {
+  opacity: 0.8;
+}
+
+.login-page p, .register-page p {
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+.login-page a, .register-page a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.note-item {
+  padding: 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.note-item__title {
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.note-item__title a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.note-item__createdAt {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.note-item__body {
+  font-size: 15px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text);
+  margin-top: 16px;
+}
+
+.homepage__action, .add-new-page__action, .detail-page__action {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 32px;
+  right: 32px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50px;
+  background-color: var(--text);
+  color: var(--background);
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.add-new-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  min-height: 80vh; 
+}
+
+.add-new-page h2 {
+  font-size: 28px;
+  margin-bottom: 32px;
+  font-weight: bold;
+}
+
+.add-new-page__input {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1; 
+}
+
+.add-new-page__input__title {
+  width: 100%;
+  font-size: 48px; 
+  font-weight: bold;
+  padding: 8px 0;
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+  font-family: var(--font-family);
+}
+
+.add-new-page__input__title:focus,
+.add-new-page__input__body:focus {
+  outline: none;
+}
+
+.add-new-page__input__body {
+  width: 100%;
+  flex: 1; 
+  font-size: 18px;
+  padding: 8px 0;
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+  font-family: var(--font-family);
+  resize: none; 
+}
+
+.add-new-page__action {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 32px;
+  right: 32px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50px;
+  background-color: var(--text);
+  color: var(--background);
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.2s;
+}
+
+.add-new-page__action:hover {
+  transform: scale(1.1);
+}
+
+.detail-page__action {
+  position: fixed;
+  display: flex;
+  gap: 16px;
+  bottom: 32px;
+  right: 32px;
+}
+
+.detail-page__action button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50px;
+  background-color: var(--text);
+  color: var(--background);
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+}
+
+.navigation ul {
+  display: flex; 
+  align-items: center; 
+  list-style: none;
+  gap: 20px; 
+  padding: 0;
+  margin: 0;
+}
+
+.navigation li {
+  display: flex;
+  align-items: center;
+}
+
+.navigation a, 
+.navigation button {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-family: var(--font-family);
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none; 
+}
+
+.navigation a {
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+}
+
+.navigation a:hover {
+  border-bottom: 2px solid var(--text);
+}
